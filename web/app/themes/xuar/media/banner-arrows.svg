@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.08 34.08">
+  <g id="a" data-name="Layer 1"/>
+  <g id="b" data-name="Layer 2">
+    <g id="c" data-name="Template">
+      <g>
+        <polyline points="19.65 25.22 11.96 17.04 19.65 8.86" style="fill: none; stroke: #fff; stroke-linecap: round; stroke-miterlimit: 10;"/>
+        <circle cx="17.04" cy="17.04" r="17.04" style="fill: #fff; opacity: .4;"/>
+      </g>
+    </g>
+  </g>
+</svg>

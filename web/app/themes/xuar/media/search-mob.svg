@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.52 22.38">
+  <defs>
+    <style>
+      .d {
+        fill: none;
+        stroke: #fff;
+        stroke-dasharray: 0 0 .15 3.4;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1.7px;
+      }
+    </style>
+  </defs>
+  <g id="a" data-name="Layer 1"/>
+  <g id="b" data-name="Layer 2">
+    <g id="c" data-name="Template">
+      <g>
+        <circle class="d" cx="11.76" cy="8.76" r="7.91"/>
+        <line class="d" x1="4.43" y1="17.35" x2=".85" y2="21.53"/>
+      </g>
+    </g>
+  </g>
+</svg>
