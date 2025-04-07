@@ -17,7 +17,12 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
@@ -27,7 +32,55 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org",
-      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    },
+    {
+      "type": "package",
+      "package": {
+        "type": "wordpress-plugin",
+        "name": "local/complianz-gdpr-premium",
+        "version": "7.1.3",
+        "dist": {
+          "type": "zip",
+          "url": ".plugins/complianz-gdpr-premium.zip"
+        },
+        "require": {
+          "composer/installers": "^1.0 || ^2.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "type": "wordpress-plugin",
+        "name": "local/visualizer-pro",
+        "version": "1.14.1",
+        "dist": {
+          "type": "zip",
+          "url": ".plugins/visualizer-pro.zip"
+        },
+        "require": {
+          "composer/installers": "^1.0 || ^2.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "type": "wordpress-plugin",
+        "name": "local/searchwp",
+        "version": "4.3.16",
+        "dist": {
+          "type": "zip",
+          "url": ".plugins/searchwp.zip"
+        },
+        "require": {
+          "composer/installers": "^1.0 || ^2.0"
+        }
+      }
     }
   ],
   "require": {
@@ -40,7 +93,22 @@
     "roots/wordpress": "6.7.2",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
-    "wpackagist-theme/twentytwentyfive": "^1.0"
+    "wpackagist-plugin/duplicate-post": "^4.0",
+    "wpackagist-plugin/wp-pagenavi": "^2.0",
+    "wpackagist-plugin/wordfence": "^8.0",
+    "wpackagist-plugin/visualizer": "^3.0",
+    "wpackagist-plugin/svg-support": "^2.0",
+    "wpackagist-plugin/google-site-kit": "^1.0",
+    "wpackagist-plugin/query-monitor": "^3.0",
+    "wpackagist-plugin/password-protected": "^2.0",
+    "wpackagist-plugin/meta-box": "^5.0",
+    "wpackagist-plugin/litespeed-cache": "^7.0",
+    "wpackagist-plugin/gutenberg": "^20.0",
+    "wpackagist-plugin/getwid": "^2.0",
+    "wpackagist-plugin/akismet": "^5.0",
+    "local/complianz-gdpr-premium": "^7.0",
+    "local/visualizer-pro": "^1.0",
+    "local/searchwp": "^4.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
@@ -58,9 +126,24 @@
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/plugins/complianz-gdpr-premium/": [
+        "local/complianz-gdpr-premium"
+      ],
+      "web/app/plugins/visualizer-pro/": [
+        "local/visualizer-pro"
+      ],
+      "web/app/plugins/searchwp/": [
+        "local/searchwp"
+      ],
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
