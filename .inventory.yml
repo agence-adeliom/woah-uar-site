@@ -1,0 +1,31 @@
+.base: &base
+  roles: app
+  port: 22
+  composer_options: "--prefer-dist --no-progress --no-interaction --optimize-autoloader --no-scripts"
+  export_node_path: false
+  keep_releases: 3
+  writable_use_sudo: true
+  forwardAgent: true
+  multiplexing: true
+  sshOptions:
+    ServerAliveInterval: 30
+    UserKnownHostsFile: /dev/null
+    StrictHostKeyChecking: no
+  remote_user: uarforn-adeliom
+  http_user: uarforn-adeliom
+  bin/npm: source ~/.bashrc && npm --scripts-prepend-node-path=true
+  bin/php: /usr/local/php8.4/bin/php -d memory_limit=-1
+  hostname: ssh.cluster023.hosting.ovh.net
+
+hosts:
+  production:
+    <<: *base
+    deploy_path: /homez.148/uarforn/production
+    stage: production
+    branch: main
+
+  staging:
+    <<: *base
+    deploy_path: /homez.148/uarforn/staging
+    stage: staging
+    branch: develop
