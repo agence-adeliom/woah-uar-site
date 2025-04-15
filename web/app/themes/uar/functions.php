@@ -8,6 +8,7 @@
  * @package UAR
  */
 
+include(TEMPLATEPATH . '/inc/http-login.php');
 include(TEMPLATEPATH . '/inc/pt/toolbox-pt.php');
 include(TEMPLATEPATH . '/inc/pt/publications-pt.php');
 include(TEMPLATEPATH . '/inc/pt/best-practice-pt.php');
