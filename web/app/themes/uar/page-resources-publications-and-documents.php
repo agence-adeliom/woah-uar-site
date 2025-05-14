@@ -1,53 +1,42 @@
 <?php
-if (isset($_GET['tax']))
-    {
-        $tax_query[] =  array(
-                'taxonomy' => $_GET['tax'],
-                'field' => 'slug',
-                'terms' => array($_GET['term'])
-            );
-        if($_GET['type']=='course'){
-          $clink = 'active';
-        }
-    }
-    if (wp_is_mobile()) {
-        $ppp= 5;
-      }else{
-        $ppp= 10;
-      }
+if (isset($_GET['tax'])) {
+  $tax_query[] =  array(
+    'taxonomy' => $_GET['tax'],
+    'field' => 'slug',
+    'terms' => array($_GET['term'])
+  );
+  if ($_GET['type'] == 'course') {
+    $clink = 'active';
+  }
+}
+if (wp_is_mobile()) {
+  $ppp = 5;
+} else {
+  $ppp = 10;
+}
 $thismeta = get_post_meta($post->ID); ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-	<head>
-	<?php include("inc/head.php");?>
-	</head>
-	<body >
-    <?php include("inc/header.php");?>
-    <?php the_content();?>
-    <div class="container-fluid post-list">
-      <div class="container post-list-head p-0">
-        <div id="list" class="title">
-          <h3>Please select resource type</h3>
-        </div>
-        <div class="buttons row no-gutters">
-          <div class="col-md col-6"><a href="/resources-toolbox#list"><span>Toolbox</span></a></div>
-          <div class="col-md col-6"><a class="active" href="/resources-publications-and-documents#list"><span>Publications and Documents</span></a></div>
-          <div class="col-md col-6"><a href="/resources-courses-and-training#list"><span>Courses and Training</span></a></div>
-          <div class="col-md col-6"><a href="/resources-media-library#list"><span>Media Library</span></a></div>
-          <div class="col-md col-6"><a href="/resources-uar-best-practice#list"><span>UAR Best Practice</span></a></div>
-        </div>
-      </div>
-      <?php
-  // WP_Query arguments
-  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-  $args = array (
-  	'post_type'              => array( 'publications' ),
-  	'post_status'            => array( 'publish' ),
-    'posts_per_page' => $ppp,
-    'paged' => $paged,
-    'tax_query' => $tax_query,
-    'meta_query' => array(
-      'relation' => 'OR',
+
+<head>
+  <?php include("inc/head.php"); ?>
+</head>
+
+<body>
+  <?php include("inc/header.php"); ?>
+  <?php the_content(); ?>
+  <div class="container-fluid post-list resource-list" id="list">
+    <?php
+    // WP_Query arguments
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    $args = array(
+      'post_type'              => array('publications'),
+      'post_status'            => array('publish'),
+      'posts_per_page' => $ppp,
+      'paged' => $paged,
+      'tax_query' => $tax_query,
+      'meta_query' => array(
+        'relation' => 'OR',
         array(
           'key' => 'list_year',
           'value' => '1900',
@@ -59,44 +48,80 @@ $thismeta = get_post_meta($post->ID); ?>
         )
       ),
       'orderby' => array(
-         'meta_value_num' => 'DESC',
-         'title'      => 'ASC',
-    )
+        'meta_value_num' => 'DESC',
+        'title'      => 'ASC',
+      )
 
-  );
+    );
 
-  $publications = new WP_Query( $args );
+    $publications = new WP_Query($args);
 
-  if ( $publications->have_posts() ) {?>
+    if ($publications->have_posts()) { ?>
       <div class="container p-0">
-        <?php	while ( $publications->have_posts() ) {
-  		$publications->the_post();?>
-        <?php $thispmeta = get_post_meta($post->ID); ?>
-        <?php include("inc/list-block.php");?>
-        <?php	} ?>
+        <?php while ($publications->have_posts()) {
+          $publications->the_post(); ?>
+          <?php $thispmeta = get_post_meta($post->ID); ?>
+          <?php include("inc/list-block.php"); ?>
+        <?php  } ?>
       </div>
-      <?php  } else {
-  	// no posts found
-  }?>
-      <div class="paging">
-        <?php wp_pagenavi( array( 'query' => $publications ) );?>
-      </div>
-      <?php wp_reset_postdata();
-  ?>
+    <?php  } else {
+      // no posts found
+    } ?>
+    <div class="paging">
+      <?php wp_pagenavi(array('query' => $publications)); ?>
     </div>
-    <footer>
-      <?php include("inc/footer.php");?>
-    </footer>
-    <script>
+    <?php wp_reset_postdata();
+    ?>
+    <div class="container other-resources p-0">
+      <div class="title headline-05">
+        See other types of resources :
+      </div>
+      <div class="buttons row">
+        <div class="col-md col-6 ">
+          <div class="card-icon-text">
+            <a href="/resources-toolbox"></a>
+            <?php include(TEMPLATEPATH . '/media/screwdriver.php'); ?>
+            <p>Toolbox</p>
+          </div>
+        </div>
 
-jQuery(function () {
-    jQuery('.wp-pagenavi a').attr('href', function (_, oldHref) {
-        oldHref =  oldHref.replace(/\#(.*)/g, "#page1");
-         if(oldHref.indexOf('#') == -1)
-            oldHref += "#list";
+        <div class="col-md col-6">
+          <div class="card-icon-text">
+            <a href="/resources-courses-and-training"></a>
+            <?php include(TEMPLATEPATH . '/media/file-certificate.php'); ?>
+            <p>Courses and Training</p>
+          </div>
+        </div>
+        <div class="col-md col-6">
+          <div class="card-icon-text">
+            <a href="/resources-media-library"></a>
+            <?php include(TEMPLATEPATH . '/media/photo-film.php'); ?>
+            <p>Media Library</p>
+          </div>
+        </div>
+        <div class="col-md col-6">
+          <div class="card-icon-text">
+            <a href="/resources-uar-best-practice"></a>
+            <?php include(TEMPLATEPATH . '/media/thumbs-up.php'); ?>
+            <p>UAR Best Practice</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <?php include("inc/footer.php"); ?>
+  </footer>
+  <script>
+    jQuery(function() {
+      jQuery('.wp-pagenavi a').attr('href', function(_, oldHref) {
+        oldHref = oldHref.replace(/\#(.*)/g, "#page1");
+        if (oldHref.indexOf('#') == -1)
+          oldHref += "#list";
         return oldHref;
+      });
     });
-});
-</script>
+  </script>
 </body>
+
 </html>

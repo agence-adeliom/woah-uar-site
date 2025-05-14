@@ -4,3 +4,187 @@ form {
 .wp-block-getwid-section__wrapper {
   height: auto;
 }
+
+/* -- */
+/* Buttons */
+/* -- */
+
+/* Primary */
+.w-btn-primary > a {
+  display: block;
+  background-color: #1a3146;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+  font-size: 15px;
+  line-height: 21px;
+  padding: 10px 20px;
+  color: #fff !important;
+  text-decoration: none;
+}
+.w-btn-primary > a:hover {
+  background-color: #384f64;
+}
+
+.dark .w-btn-primary > a {
+  background-color: #ff6960;
+  color: #fff !important;
+}
+.dark .w-btn-primary > a:hover {
+  background-color: #e14b42;
+}
+
+/* Outline */
+a.btn-outline,
+.w-btn-outline a {
+  display: block;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  font-size: 15px !important;
+  line-height: 21px !important;
+  padding: 10px 20px !important;
+  color: #1a3146 !important;
+  text-decoration: none;
+  border: 1px solid #ff6960;
+  height: auto !important;
+}
+a.btn-outline:hover,
+.w-btn-outline a:hover {
+  background-color: #ff6960;
+}
+
+.dark a.btn-outline,
+.dark .w-btn-outline a {
+  color: #fff !important;
+}
+.dark a.btn-outline:hover,
+.dark .w-btn-outline a:hover {
+  background-color: #ff6960;
+}
+
+/* Text */
+.w-btn-text a {
+  background-color: transparent;
+  transition: all 0.3s ease;
+  border-radius: 0px;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 0px;
+  font-weight: 600;
+  color: #1a3146 !important;
+  text-decoration: none;
+  display: inline-flex;
+
+  &:after {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M11.0898 7.28516C11.3359 7.55859 11.3359 7.96875 11.0898 8.21484L6.71484 12.5898C6.44141 12.8633 6.03125 12.8633 5.78516 12.5898C5.51172 12.3438 5.51172 11.9336 5.78516 11.6875L9.69531 7.77734L5.78516 3.83984C5.51172 3.59375 5.51172 3.18359 5.78516 2.9375C6.03125 2.66406 6.44141 2.66406 6.6875 2.9375L11.0898 7.28516Z' fill='%231A3146'/%3E%3C/svg%3E");
+    margin-left: 4px;
+    margin-top: 2px;
+  }
+}
+.w-btn-text a:hover {
+  color: #384f64 !important;
+}
+.group:hover .w-btn-text a {
+  color: #384f64 !important;
+}
+
+/* -- */
+/* Headline */
+/* -- */
+.headline-02 {
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: 400;
+}
+.headline-03 {
+  font-size: 28px;
+  line-height: 120%;
+  font-weight: 400;
+}
+.headline-04 {
+  font-size: 20px;
+  line-height: 120%;
+  font-weight: 400;
+}
+.headline-05 {
+  font-size: 17px;
+  line-height: 120%;
+  font-weight: 400;
+}
+@media (min-width: 576px) {
+  .headline-02 {
+    font-size: 40px;
+  }
+  .headline-02 {
+    font-size: 36px;
+  }
+  .headline-04 {
+    font-size: 22px;
+  }
+  .headline-05 {
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 992px) {
+  .headline-02 {
+    font-size: 48px;
+  }
+  .headline-03 {
+    font-size: 42px;
+  }
+  .headline-04 {
+    font-size: 24px;
+  }
+  .headline-05 {
+    font-size: 21px;
+  }
+}
+
+/* -- */
+/* Components */
+/* -- */
+.card-icon-text {
+  background-color: white;
+  padding: 16px;
+  border: 1px solid #e4e4e7;
+  color: #1a3146;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+
+  svg {
+    flex: none;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    margin: 0 !important;
+  }
+
+  .wp-block-buttons,
+  .wp-block-button,
+  .wp-block-buttons a,
+  a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    font-size: 0;
+    border-radius: 0;
+  }
+
+  &:hover {
+    background-color: #1a3146;
+    border: 1px solid #1a3146;
+    color: white;
+  }
+}
