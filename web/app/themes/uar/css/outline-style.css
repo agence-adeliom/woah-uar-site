@@ -1,119 +1,132 @@
 .wp-block {
-  font-family: 'Work Sans', sans-serif;
-    outline: 1px solid red!important;
-    padding:15px;
+  font-family: "Work Sans", sans-serif;
+  outline: 1px solid red !important;
+  padding: 15px;
 
-    transition: all 0.2s;
-
-
+  transition: all 0.2s;
 }
 
+html :where(.wp-block) {
+  max-width: 1400px;
+}
 
-h1{
-  font-size: 32px!important;
-  line-height: normal!important;
-  font-weight: 300!important;
+h1 {
+  font-size: 32px !important;
+  line-height: normal !important;
+  font-weight: 300 !important;
+}
+h1 strong {
+  font-weight: 700 !important;
+}
+h2 {
+  font-size: 24px !important;
+  line-height: normal !important;
+  font-weight: 400 !important;
+}
+h3 {
+  font-size: 21px !important;
+  line-height: normal !important;
+  font-weight: 400 !important;
+}
+h3 strong {
+  font-weight: 600 !important;
+}
+h4 {
+  font-size: 18px !important;
+  line-height: normal !important;
+  font-weight: 400 !important;
+}
+h4 strong {
+  font-weight: 600 !important;
+}
+h5 {
+  font-size: 16px !important;
+  line-height: normal !important;
+  font-weight: 400 !important;
+}
+h5 strong {
+  font-weight: 500 !important;
+}
+.editor-styles-wrapper p {
+  font-size: 15px !important;
+  line-height: normal !important;
+  font-weight: 400 !important;
+}
+.editor-styles-wrapper p strong {
+  font-weight: 500 !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #1a3146 !important;
+}
+.wp-block-button {
+  padding: 0 15px;
+}
+.wp-block-button__link {
+  background-color: $darkblue;
+  min-width: 180px;
+  border-radius: 0 !important;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: $white !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 20px;
+  text-align: center;
 
+  text-decoration: none;
+  word-break: break-word;
 }
-h1 strong{
-  font-weight: 700!important;
-}
-h2{
-  font-size: 24px!important;
-  line-height: normal!important;
-  font-weight: 400!important;
-}
-h3{
-  font-size: 21px!important;
-  line-height: normal!important;
-  font-weight: 400!important;
 
+.feature-banner-new::before {
+  content: "Feature Header";
 }
-h3 strong{
-  font-weight: 600!important;
+.single-col-content::before {
+  content: "Single Column Block";
 }
-h4{
-  font-size: 18px!important;
-  line-height: normal!important;
-  font-weight: 400!important;
+.tabs-block::before {
+  content: "Tabs Block";
+}
+.image-block-3col::before {
+  content: "Image 3 Col";
+}
+.content-separator::before {
+  content: "Separator (Line)";
+}
+.double-col-content::before {
+  content: "2 Col Content";
+}
+.signposts-3col::before {
+  content: "Signposts 3 Col";
+}
+.post-carousel::before {
+  content: "Post Carousel";
+}
+.signposts-2col::before {
+  content: "Signposts 2 Col";
+}
+.page-title::before {
+  content: "Page Title";
+}
 
-}
-h4 strong{
-  font-weight: 600!important;
-}
-h5{
-  font-size: 16px!important;
-  line-height: normal!important;
-  font-weight: 400!important;
-
-}
-h5 strong{
-    font-weight: 500!important;
-  }
-.editor-styles-wrapper p{
-  font-size: 15px!important;
-  line-height: normal!important;
-  font-weight: 400!important;
-
-}
-.editor-styles-wrapper p strong{
-  font-weight: 500!important;
-}
-h1, h2, h3, h4, h5, h6{
-  color: #1a3146!important;
-}
-.wp-block-button{
-    padding: 0 15px;
-  }
-    .wp-block-button__link {
-      background-color: $darkblue;
-      min-width: 180px;
-      height: 40px;
-      line-height: 38px;
-      border-radius: 0!important;
-      box-shadow: none;
-      box-sizing: border-box;
-      color: $white!important;
-      cursor: pointer;
-      display: inline-block;
+.block-priority {
+  .w-links {
+    .wp-element-button {
       font-size: 15px;
+      line-height: 21px;
+      color: #27272a;
+      text-decoration: underline;
+      transition: color 250ms ease;
+      padding: 0 !important;
+      background: none;
+      border-radius: 0;
       font-weight: 500;
-      padding: 0 20px;
-      text-align: center;
-
-      text-decoration: none;
-      word-break: break-word;
+    }
   }
-
-
-.feature-banner-new::before{
-
-    content:'Feature Header'
-}
-.single-col-content::before{
-    content:'Single Column Block'
-}
-.tabs-block::before{
-  content:'Tabs Block'
-}
-.image-block-3col::before{
-  content:'Image 3 Col';
-}
-.content-separator::before{
-  content:'Separator (Line)';
-}
-.double-col-content::before{
-  content:'2 Col Content';
-}
-.signposts-3col::before{
-  content:'Signposts 3 Col';
-}
-.post-carousel::before{
-  content:'Post Carousel';
-}
-.signposts-2col::before{
-  content:'Signposts 2 Col';
-}
-.page-title::before{
-  content:'Page Title';
 }

@@ -109,7 +109,8 @@
     "local/complianz-gdpr-premium": "^7.0",
     "local/visualizer-pro": "^1.0",
     "local/searchwp": "^4.0",
-    "deployer/deployer": "^7.5"
+    "deployer/deployer": "^7.5",
+    "wpackagist-plugin/wordpress-seo": "^25.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
