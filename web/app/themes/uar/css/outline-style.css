@@ -115,7 +115,8 @@ h6 {
   content: "Page Title";
 }
 
-.block-priority {
+.block-priority,
+.block-objectives {
   .w-links {
     .wp-element-button {
       font-size: 15px;
