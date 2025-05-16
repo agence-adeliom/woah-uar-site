@@ -16140,6 +16140,7 @@ ul#menu-dropnav,
       padding: 16px;
       height: 100%;
       background-color: white;
+      flex: 1;
 
       .tag a {
         padding: 4px 8px;
