@@ -100,7 +100,6 @@
     "wpackagist-plugin/svg-support": "^2.0",
     "wpackagist-plugin/google-site-kit": "^1.0",
     "wpackagist-plugin/query-monitor": "^3.0",
-    "wpackagist-plugin/password-protected": "^2.0",
     "wpackagist-plugin/meta-box": "^5.0",
     "wpackagist-plugin/litespeed-cache": "^7.0",
     "wpackagist-plugin/gutenberg": "^20.0",
