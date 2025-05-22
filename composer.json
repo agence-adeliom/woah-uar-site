@@ -90,7 +90,7 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.7.2",
+    "roots/wordpress": "^6.0",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
     "wpackagist-plugin/duplicate-post": "^4.0",
@@ -110,7 +110,8 @@
     "local/visualizer-pro": "^1.0",
     "local/searchwp": "^4.0",
     "deployer/deployer": "^7.5",
-    "wpackagist-plugin/wordpress-seo": "^25.0"
+    "wpackagist-plugin/wordpress-seo": "^25.0",
+    "wpackagist-plugin/wp-migrate-db": "^2.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
